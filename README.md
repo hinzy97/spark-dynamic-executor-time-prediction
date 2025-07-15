@@ -50,7 +50,7 @@ Workloads include:
 ## 🔧 Future Work
 
 - Integration with Spark UI for real-time feature extraction
-- Coupling DAM with an **optimization framework** for executor recommendation
+- Coupling Dynamic Allocation Model (DAM) with an **optimization framework** for executor recommendation
 - Extending DAM for **multi-job workloads** or streaming scenarios
 
 ---
