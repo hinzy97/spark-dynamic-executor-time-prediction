@@ -8,25 +8,18 @@ DOI: https://doi.org/10.1007/978-3-031-43185-2_23
 
 ---
 
-## 📢 Citation
+## 🧠 What It Does
+The goal is to accurately predict the **total runtime** of Spark applications affected by dynamic executor behavior.
+Two types of neural network models are implemented:
+- **Black-box model**: Uses summary-level features (e.g., input size, total stages, executor scaling stats).
+- **White-box model**: Uses detailed stage-level features including shuffle read/write, task metrics, and executor timelines.
 
-If you use this code or build upon it, please cite the original paper:
+Workloads include:
 
-```
-@inproceedings{tariq2023execution,
-  title={Execution Time Prediction Model that Considers Dynamic Allocation of Spark Executors},
-  author={Tariq, Hina and Das, Olivia},
-  booktitle={Computer Performance Engineering (EPEW/ASMTA)},
-  series={Lecture Notes in Computer Science},
-  volume={14231},
-  pages={340--352},
-  year={2023},
-  publisher={Springer},
-  doi={10.1007/978-3-031-43185-2_23}
-}
-```
+- **TPC-DS SQL queries**: Q26, Q52, Q70
+- **KMeans clustering**
 
----
+
 
 ## Structure
 
@@ -51,5 +44,37 @@ If you use this code or build upon it, please cite the original paper:
 
 1. Open a Jupyter notebook inside the `NN` folder.
 2. Run the notebook to view predictions and plots.
+
+---
+
+## 🔧 Future Work
+
+- Integration with Spark UI for real-time feature extraction
+- Coupling DAM with an **optimization framework** for executor recommendation
+- Extending DAM for **multi-job workloads** or streaming scenarios
+
+---
+
+If you use this code or build upon it, please cite the original paper:
+
+---
+
+## 📢 Citation
+
+```
+@inproceedings{tariq2023execution,
+  title={Execution Time Prediction Model that Considers Dynamic Allocation of Spark Executors},
+  author={Tariq, Hina and Das, Olivia},
+  booktitle={Computer Performance Engineering (EPEW/ASMTA)},
+  series={Lecture Notes in Computer Science},
+  volume={14231},
+  pages={340--352},
+  year={2023},
+  publisher={Springer},
+  doi={10.1007/978-3-031-43185-2_23}
+}
+```
+---
+
 
 
