@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the following paper:"
+authors:
+  - family-names: Tariq
+    given-names: Hina
+  - family-names: Das
+    given-names: Oluwaseun
+title: "Execution Time Prediction Model that Considers Dynamic Allocation of Spark Executors"
+doi: 10.1007/978-3-031-43185-2_23
+date-released: 2023-10-01
+version: 1.0.0
+url: https://github.com/hinzy97/dynamic-spark-execution-predictor
