@@ -9,4 +9,4 @@ title: "Execution Time Prediction Model that Considers Dynamic Allocation of Spa
 doi: 10.1007/978-3-031-43185-2_23
 date-released: 2023-10-01
 version: 1.0.0
-url: https://github.com/hinzy97/dynamic-spark-execution-predictor
+url: https://github.com/hinzy97/spark-dynamic-executor-time-prediction
