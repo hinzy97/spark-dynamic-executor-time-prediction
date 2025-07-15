@@ -1,11 +1,15 @@
-.ipynb_checkpoints/
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.egg-info/
-*.egg
-*.log
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Data and logs
 *.csv
-*.json
-*.pkl
-.DS_Store
-Thumbs.db
+*.log
+
+# Virtual environments
+.env/
+.venv/

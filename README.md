@@ -1,65 +1,55 @@
-# Q64_SAM: Deterministic Execution Time Prediction for Spark Applications
+# NN Execution Time Prediction
 
-This Jupyter notebook implements the **graph-based deterministic analytical model** described in the paper:
+This repository contains neural network models for predicting execution time of Spark applications, based on the paper:
 
-**"A Deterministic Model to Predict Execution Time of Spark Applications"**  
-*Hina Tariq and Olivia Das, EPEW 2022, Springer LNCS.*
+**Tariq, H., & Das, O. (2023). Execution Time Prediction Model that Considers Dynamic Allocation of Spark Executors.**  
+Published in: *EPEW/ASMTA 2023, Lecture Notes in Computer Science (LNCS)*.  
+DOI: https://doi.org/10.1007/978-3-031-43185-2_23
 
-## 📘 Overview
+---
 
-The notebook predicts the execution time of **Query-64 (TPC-DS benchmark)** on a Spark cluster using a deterministic simulation approach. The model simulates a flat DAG of stages, assigns tasks based on Spark's round-robin scheduling, and accounts for execution time per task and parallelism due to multiple executor cores.
+## 📢 Citation
 
-### Key Features:
-- Represents the DAG of Query-64 stages with dependency and task execution parameters.
-- Simulates task execution on executor cores (8 cores used).
-- Produces a predicted total execution time.
-- Validated with real Spark history logs (Google Cloud).
+If you use this code or build upon it, please cite the original paper:
 
-## 🔬 Methodology
-
-The model:
-1. Flattens the Spark DAG to remove job-level hierarchy.
-2. Uses input parameters from two reference input sizes (20GB, 100GB).
-3. Estimates stage-level parameters for a target input size (e.g., 200GB).
-4. Schedules tasks using round-robin policy over executor cores.
-5. Predicts execution time including warm-up overhead.
-
-## 🧪 Validation
-
-The model achieves **2.85% error** in execution time prediction compared to measured runtime on Google Cloud for 200GB input.
-
-| Measured Time (s) | Predicted Time (s) | Error (%) |
-|-------------------|---------------------|-----------|
-| 491.71            | 477.71              | 2.85      |
-
-## 📂 Files
-
-- `Q64_SAM.ipynb` – Main notebook implementing the model and predicting execution time.
-- `paper/` – Contains the original publication in PDF format.
-
-## 🚀 How to Run
-
-1. Open the notebook in **JupyterLab**, **Jupyter Notebook**, or **Google Colab**.
-2. Run each cell sequentially.
-3. Inspect the DAG, input parameters, and final predicted execution time.
-
-## 📝 Citation
-
-If you use this repository, please cite:
-
-```bibtex
-@inproceedings{tariq2022deterministic,
-  title={A Deterministic Model to Predict Execution Time of Spark Applications},
+```
+@inproceedings{tariq2023execution,
+  title={Execution Time Prediction Model that Considers Dynamic Allocation of Spark Executors},
   author={Tariq, Hina and Das, Olivia},
-  booktitle={European Performance Engineering Workshop (EPEW)},
-  pages={167--181},
+  booktitle={Computer Performance Engineering (EPEW/ASMTA)},
+  series={Lecture Notes in Computer Science},
+  volume={14231},
+  pages={340--352},
   year={2023},
-  publisher={Springer}
+  publisher={Springer},
+  doi={10.1007/978-3-031-43185-2_23}
 }
 ```
 
-## 🔧 Future Work
+---
 
-- Support for dynamic executor allocation.
-- Integration with Spark UI history logs directly.
-- Comparison with ML-based predictive models.
+## Structure
+
+- `km_nn_blackbox.txt`: NN model using blackbox features for KMeans.
+- `km_nn_whitebox.txt`: NN model using whitebox features for KMeans.
+- `query26_nn_blackbox.txt`: NN model using blackbox features for Query-26.
+- `query26_nn_whitebox.txt`: NN model using whitebox features for Query-26.
+- `q52_NN_black box.ipynb`: Blackbox NN model for Query-52
+- `q52_NN_whitebox.ipynb`: Whitebox NN model for Query-52
+- `q70_NN_black box.ipynb`: Blackbox NN model for Query-70
+- `q70_NN_whitebox.ipynb`: Whitebox NN model for Query-70
+- `kmeansdata.csv`: Input data for KMeans models.
+- `query26_train_blackbox.csv`: Blackbox feature data for Query-26.
+- `query26_train_whitebox.csv`: Whitebox feature data for Query-26.
+- `query52train.csv`: Blackbox feature data for Query-52.
+- `query52train1.csv`: Whitebox feature data for Query-52.
+- `query70train.csv`: Blackbox feature data for Query-70.
+- `query70train1.csv`: Whitebox feature data for Query-70.
+
+
+## How to Run
+
+1. Open a Jupyter notebook inside the `NN` folder.
+2. Run the notebook to view predictions and plots.
+
+
