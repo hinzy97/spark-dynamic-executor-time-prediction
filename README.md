@@ -11,7 +11,7 @@ DOI: https://doi.org/10.1007/978-3-031-43185-2_23
 ## 🧠 What It Does
 The goal is to accurately predict the **total runtime** of Spark applications affected by dynamic executor behavior.
 Two types of neural network models are implemented:
-- **Black-box model**: Uses summary-level features (e.g., input size, total stages, executor scaling stats).
+- **Black-box model**: Feature Selection ('Datasize', 'IdleTimeout', 'BacklogTimeout').
 - **White-box model**: Uses detailed stage-level features including shuffle read/write, task metrics, and executor timelines.
 
 Workloads include:
